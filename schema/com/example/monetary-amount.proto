@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "confluent/meta.proto";
+import "confluent/type/decimal.proto";
+import "com/example/currency.proto";
+
+package com.example;
+
+message MonetaryAmount {
+  .confluent.type.Decimal value = 1 [(confluent.field_meta) = { params: [
+    { key: "precision", value: "9" },
+    { key: "scale", value: "5" }
+  ]}];
+  .com.example.Currency currency = 2;
+}

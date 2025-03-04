@@ -1,0 +1,19 @@
+{
+    "schema": "",
+    "schemaType": "AVRO",
+    "metadata": {
+        "properties": {
+            "major.version": 1
+        }
+    },
+    "ruleSet": {
+        "domainRules": [{
+            "name": "ageCheck",
+            "kind": "CONDITION",
+            "type": "CEL",
+            "mode": "WRITE",
+            "expr": "message.Age >= 18",
+            "disabled": false
+        }]
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "namespace": "com.example",
+    "type": "record",
+    "name": "User",
+    "fields": [
+        {
+            "name": "Name",
+            "type": "string"
+        },
+        {
+            "name": "DateOfBirth",
+            "type": "long"
+        }
+    ]
+}

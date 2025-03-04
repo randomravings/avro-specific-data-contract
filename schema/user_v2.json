@@ -1,0 +1,29 @@
+{
+    "schema": "",
+    "schemaType": "AVRO",
+    "metadata": {
+        "properties": {
+            "major.version": 2
+        }
+    },
+    "ruleSet": {
+        "migrationRules": [
+            {
+                "name": "replace_age_with_date_of_birth",
+                "kind": "TRANSFORM",
+                "type": "JSONATA",
+                "mode": "UPGRADE",
+                "expr": "$merge([$sift($, function($v, $k) {$k != 'Age'}), {'DateOfBirth': 0}])",
+                "disabled": false
+            },
+            {
+                "name": "replace_date_of_birth_with_age",
+                "kind": "TRANSFORM",
+                "type": "JSONATA",
+                "mode": "DOWNGRADE",
+                "expr": "$merge([$sift($, function($v, $k) {$k != 'DateOfBirth'}), {'Age': 999}])",
+                "disabled": false
+            }
+        ]
+    }
+}
