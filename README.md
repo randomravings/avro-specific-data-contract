@@ -26,7 +26,7 @@ For the C# example:
 
 First navigate to the root of the project.
 
-To etup the Confluent Platform environment as follows:
+To setup the Confluent Platform environment as follows:
 
 ```shell
 ./setup.sh
@@ -50,7 +50,7 @@ dotnet build src/main/dotnet/
 dotnet run --project src/main/dotnet/
 ```
 
-What you should be able to see in the promt is the migration rules in action, the producers vary, but the individual consumer versions are consistent in their format.
+What you should be able to see in the prompt is the migration rules in action, the producers vary, but the individual consumer versions are consistent in their format.
 
 To clean up the environment run:
 
@@ -81,7 +81,7 @@ jq --arg data "$(jq -c . "schema/user_v2.avsc")" '.schema = $data' "schema/user_
   jq
 ```
 
-Notice `major.version`, which is an arbitrary chosen property name, and the way we deploy schemas to the different compatibiliy groups is by specifying it as follows in the POST payload:
+Notice `major.version`, which is an arbitrary chosen property name, and the way we deploy schemas to the different compatibility groups is by specifying it as follows in the POST payload:
 
 ```json
 {
