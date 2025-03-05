@@ -23,8 +23,8 @@ public class Example {
       .build()
     ;
 
-    KafkaClient.runProcucer("user-topic", 1, List.of(userV1));
-    KafkaClient.runProcucer("user-topic", 2, List.of(userV2));
+    KafkaClient.runProducer("user-topic", 1, List.of(userV1));
+    KafkaClient.runProducer("user-topic", 2, List.of(userV2));
 
     KafkaClient.runConsumer("user-topic", "java-cg-v1", 1);
     KafkaClient.runConsumer("user-topic", "java-cg-v2", 2);
