@@ -28,7 +28,7 @@ import io.confluent.kafka.serializers.KafkaAvroSerializerConfig;
 
 public class KafkaClient {
 
-  public static <T extends SpecificRecord> void runProcucer(String topic, Integer version, List<T> values) throws IOException {
+  public static <T extends SpecificRecord> void runProducer(String topic, Integer version, List<T> values) throws IOException {
     final Properties props = loadConfig("config.properties");
     props.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, VoidSerializer.class.getName());
     props.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class.getName());
