@@ -81,7 +81,7 @@ jq --arg data "$(jq -c . "schema/user_v2.avsc")" '.schema = $data' "schema/user_
   jq
 ```
 
-Notice `major.version`, which is an arbitrary chosed property name, and the way we deploy schemas to the different compatibiliy groups is by specifying it as follows in the POST payload:
+Notice `major.version`, which is an arbitrary chosen property name, and the way we deploy schemas to the different compatibiliy groups is by specifying it as follows in the POST payload:
 
 ```json
 {
