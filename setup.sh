@@ -1,12 +1,3 @@
-#!/bin/bash
-
-# if [[ $# -ne 2 ]]; then
-#     echo "Usage '$(basename "$0") <app-name> <function-key>'"
-#     exit 1
-# fi
-
-docker compose down -v
-
 docker compose -f docker/docker-compose.yml -p cp-data-contracts up -d
 
 echo "Waiting Broker UP..."
